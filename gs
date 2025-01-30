@@ -1,3 +1,1 @@
-gs() {
-    git status
-}
+git status
