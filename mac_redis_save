@@ -1,0 +1,11 @@
+mac_redis_save() {
+echo "redis_stop"
+redis_stop
+echo "redis_startb"
+redis_startb
+echo "redis_stop"
+redis_stop
+rm /Users/barbidou/Library/CloudStorage/ProtonDrive-barbouille.aughra@protonmail.com/base_redis/backup/.last_backup
+echo "lancement redis save"
+/Users/barbidou/git/salome/app/bck_save_mac_redis_slm.sh
+}

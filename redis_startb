@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DOCKER_COMPOSE_REDIS="/Users/barbidou/git/salome/docker-compose-redis-mac.yml"
+DOCKER_COMPOSE_MAIN="/Users/barbidou/git/salome/docker-compose-mac.yml"
+
+redis_startb() {
+    echo "Arrêt et nettoyage des conteneurs Redis..."
+    # Arrête et supprime les conteneurs Redis
+    docker-compose -f "$DOCKER_COMPOSE_REDIS" down
+
+    echo "Démarrage du service Redis..."
+    docker-compose -f "$DOCKER_COMPOSE_REDIS" up -d redis
+
+    echo "Affichage des logs..."
+    docker-compose -f "$DOCKER_COMPOSE_MAIN" logs --follow
+}
+
+# Exécution de la fonction
+redis_startb

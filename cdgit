@@ -1,0 +1,3 @@
+cdgit() {
+   cd  /Users/barbidou/git
+}

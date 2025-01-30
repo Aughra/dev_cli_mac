@@ -1,0 +1,10 @@
+#!/bin/bash
+mac_redis() {
+    cd /Users/barbidou/git/salome
+    git switch slme
+    gc
+    docker-compose -f Docker-compose-redis-mac.yml down
+
+    docker-compose -f Docker-compose-redis-mac.yml up
+
+}

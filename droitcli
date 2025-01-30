@@ -1,0 +1,4 @@
+droitcli() {
+    chmod a+x /Users/barbidou/Library/CloudStorage/ProtonDrive-barbouille.aughra@protonmail.com/cli/mac/*
+    echo "cli modified"
+}

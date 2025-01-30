@@ -1,0 +1,5 @@
+mac_save() {
+    python3 /Users/barbidou/git/salome/tools/mac/mac_save.py
+}
+
+    

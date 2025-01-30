@@ -1,0 +1,12 @@
+fix_git_permissions() {
+    local start_dir="${1:-$PWD}"
+    
+    _modify() {
+        find "$1" -type f -exec chmod 644 {} +
+        find "$1" -type d -exec chmod 755 {} +
+    }
+
+    find "$start_dir" -type d -name ".git" | while read -r git_dir; do
+        _modify "$git_dir"
+    done
+}

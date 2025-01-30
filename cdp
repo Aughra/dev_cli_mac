@@ -1,0 +1,7 @@
+cdp() {
+    if [ -n "$proton" ] && [ -d "$proton" ]; then
+        cd "$proton"
+    else
+        echo "Erreur: $proton n'est pas un répertoire valide"
+    fi
+}

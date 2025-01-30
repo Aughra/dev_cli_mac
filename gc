@@ -1,0 +1,37 @@
+gc() {
+    # Liste des répertoires à traiter
+    repos=("/Users/barbidou/git/salome" "/Users/barbidou/git/cli")
+    
+    for repo in "${repos[@]}"; do
+        cd "$repo"
+        
+        # Affiche le nom du répertoire (basename)
+        echo "📂 $(basename $repo) ******************************************************************************"
+        
+        # Exécute le script de backup uniquement pour salome
+        if [[ "$repo" == *"salome"* ]]; then
+            /Users/barbidou/git/salome/app/backup_save_mac.sh
+        fi
+        
+        # Vérifie le statut git
+        GIT_STATUS=$(git status)
+        
+        # Vérifie si "Votre branche est à jour" et "rien à valider" sont présents
+        if echo "$GIT_STATUS" | grep -q "Votre branche est à jour" && echo "$GIT_STATUS" | grep -q "rien à valider"; then
+            echo "✨ Rien à commiter - Branche à jour"
+            cd - > /dev/null  # Retour au répertoire précédent silencieusement
+            continue
+        fi
+        
+        # S'il y a des changements, continuer avec le processus
+        echo "📦 Changements détectés :"
+        git status
+        git add .
+        git commit -m "commit $(date "+%Y-%m-%d %H:%M:%S")"
+        git push
+        echo "✅ Push terminé :"
+        git status
+        
+        cd - > /dev/null  # Retour au répertoire précédent silencieusement
+    done
+}

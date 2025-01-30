@@ -1,0 +1,8 @@
+#!/bin/bash
+cdcli() {
+    if [ -n "$proton/cli/mac" ] && [ -d "$proton" ]; then
+        cd $proton/cli/mac
+    else
+        echo "Erreur: $proton/cli/mac n'est pas un répertoire valide"
+    fi
+}

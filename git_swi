@@ -1,0 +1,5 @@
+git_swi() {
+    git switch slme
+    git_b
+    git_ status
+}

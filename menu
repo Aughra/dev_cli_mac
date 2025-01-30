@@ -1,0 +1,42 @@
+menu() {
+    echo "Navigation :"
+    echo "  cdcli        Change directory vers cli pour mac"
+    echo "  cdcn         Change directory vers cn - notion : "$notion
+    echo "  cdp          Change directory vers p"
+    echo "  cdgit        Change directory vers git"
+
+    echo -e "\nvscode :"
+    echo "  cdegit       ouvre vscode dans git"
+
+    echo -e "\ndocket :"
+    echo "doup         docker up"
+
+
+    echo -e "\nGit :"
+    echo "  gs           Git status"
+    echo "  gc           Git commit"
+    echo "  fix_git_permissions  Corrige les permissions git"
+    
+    echo -e "\nAutres :"
+    echo "  droitcli     Change les droits cli"
+    echo "  web          Commande web"
+
+    echo -e "\nNotion :"
+    echo "  cdegit       ouvre vscode dans git"
+    echo "  cnv          lance notion sur branch ver - "
+    echo "  droitcli     Change les droits script chmod a+x *"
+    echo "  reinit_redis  mise à jour technco ,client, et bases  "
+    echo "  notion_save  sauvegarde notion de la base et fichier ds notion_source"
+
+    echo -e "\nsalome :"
+    echo "  cdes       ouvre vscode dans salome"
+    echo "  scd        cd dans salome"
+    echo "  sdoup      lance salome"
+    echo "  sdoraz       raz et lance salome"
+    
+
+    echo -e "\nDivers :" 
+
+
+
+}

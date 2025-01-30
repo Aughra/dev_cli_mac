@@ -1,0 +1,6 @@
+echo "stop redis"
+
+redis_stop() {
+    docker exec salome-redis-1 redis-cli SAVE
+    docker stop salome-redis-1
+}

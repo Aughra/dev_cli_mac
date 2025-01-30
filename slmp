@@ -1,0 +1,24 @@
+#!/bin/bash
+slm() {
+    cd /Users/barbidou/git/salome
+    git switch main
+    # # Arrêter uniquement cnv s'il tourne déjà
+    # docker-compose stop cnv
+
+    # # Reconstruire cnv
+    # docker-compose build cnv
+
+    # # Redémarrer uniquement cnv
+    # docker-compose up -d cnv
+
+    # # Voir les logs de cnv
+    # docker-compose logs -f cnv
+
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml down
+
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml up -d
+
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml up slm
+
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml logs -f
+}

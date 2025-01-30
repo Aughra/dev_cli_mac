@@ -1,0 +1,5 @@
+reinit_col_redis_mac() {
+    python3 /Users/barbidou/git/salome/app/init_colonne.py
+}
+
+

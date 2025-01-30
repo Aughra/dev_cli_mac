@@ -1,0 +1,19 @@
+#!/bin/bash
+slmb() {
+    cd /Users/barbidou/git/salome
+    
+    # Arrêter tous les conteneurs
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml down
+
+    # Forcer la suppression des images
+    docker rmi -f salome-slm redis:latest
+
+    # Nettoyage
+    docker system prune -a --volumes --force
+
+    # Reconstruction et démarrage
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml build slm
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml up slm
+    gc
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml logs -f
+}

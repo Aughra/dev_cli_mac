@@ -1,0 +1,9 @@
+
+cdcn() {
+    if [ -n "$notion" ] && [ -d "$notion" ]; then
+        cd "$notion"
+    else
+        echo "Erreur: $notion n'est pas un répertoire valide"
+    fi
+}
+

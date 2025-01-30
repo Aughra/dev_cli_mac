@@ -1,0 +1,14 @@
+#!/bin/bash
+slm() {
+    touch /Users/barbidou/automatique/automatique.txt
+    cd /Users/barbidou/git/salome
+    git switch slme
+    gc
+
+    # Arrête et supprime tous les conteneurs
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml down
+
+    # Démarre uniquement le service slm
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-mac.yml up slm
+
+}

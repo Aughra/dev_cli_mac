@@ -1,0 +1,10 @@
+#!/bin/bash
+redis_start() {
+
+    # Arrête et supprime tous les conteneurs
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-redis-mac.yml down redis
+
+    # Démarre uniquement le service slm
+    docker-compose -f /Users/barbidou/git/salome/docker-compose-redis-mac.yml up redis
+
+}

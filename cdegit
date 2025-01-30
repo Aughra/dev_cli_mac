@@ -1,0 +1,4 @@
+cdegit() {
+    cd "/Users/barbidou/git"
+    code "/Users/barbidou/git"
+}
